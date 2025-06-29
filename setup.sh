@@ -206,3 +206,12 @@ killall waybar; waybar &
 sudo pacman -S greetd greetd-tuigreet
 sudo sed -i 's|command = "agreety --cmd /bin/sh"|command = "tuigreet --cmd Hyprland --user-menu --time --asterisks"|' /etc/greetd/config.toml
 
+### usernameをalgoにする！！
+sudo systemctl disable sddm
+sudo systemctl stop sddm
+
+# sudo rm /etc/systemd/system/display-manager.service
+sudo systemctl enable greetd
+sudo systemctl start greetd
+
+

@@ -134,7 +134,7 @@ allow_remote_control yes
 paru -S rust
 paru -S swww-git
 paru -S rofimoji
-
+sudo pacman -S zenity
 
 #paru -S azote
 echo -e '\nexec-once = ~/.config/hypr/scripts/restore_wallpaper.sh\nbind = CTRL ALT, E, exec, rofimoji --selector wofi --clipboarder wl-copy --action copy' >> ~/.config/hypr/hyprland.conf
@@ -192,4 +192,7 @@ swww img "$SELECTED" --transition-type grow
 EOF
 
 chmod +x ~/.config/hypr/scripts/set_wallpaper.sh
+
+
+
 

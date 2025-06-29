@@ -1,3 +1,10 @@
 #!/usr/bin/env fish
 
-echo "Hello from Fish!"
+
+
+
+### install google-chrome, ranger
+
+sudo pacman -S ranger
+# paru -S google-chrome
+

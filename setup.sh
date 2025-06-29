@@ -202,5 +202,7 @@ sudo pacman -S pavucontrol
 
 killall waybar; waybar &
 
-
+### login theme setting
+sudo pacman -S greetd greetd-tuigreet
+sudo sed -i 's|command = "agreety --cmd /bin/sh"|command = "tuigreet --cmd Hyprland --user-menu --time --asterisks"|' /etc/greetd/config.toml
 

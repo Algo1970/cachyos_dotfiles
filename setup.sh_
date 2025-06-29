@@ -193,6 +193,14 @@ EOF
 
 chmod +x ~/.config/hypr/scripts/set_wallpaper.sh
 
+### waybar setting
+sudo pacman -S lm_sensors
+sudo sensors-detect
+sudo pacman -S pavucontrol
+
+### copy config , style.css
+
+killall waybar; waybar &
 
 
 

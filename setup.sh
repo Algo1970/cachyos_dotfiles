@@ -251,6 +251,13 @@ exit
 ### init.luaにvim.g.loaded_python3_provider = 0を追加
 
 ### Node.js provider error
-sudo pacman -S nodejs npm
+sudo pacman -S nodejs npm:q
 sudo npm install -g neovim
+
+### install fzf
+sudo pacman -S fzf
+
+set -Ux EDITOR nvim
+set -Ux VISUAL nvim
+
 

@@ -214,4 +214,43 @@ sudo systemctl stop sddm
 sudo systemctl enable greetd
 sudo systemctl start greetd
 
+### install R
+sudo pacman -S r
+R --quiet -e 'install.packages(c("tidyverse", "languageserver", "data.table"), repos="https://cloud.r-project.org")'
+
+### install ipython
+sudo pacman -S ipython
+
+### install pfetch
+cargo install pfetch
+
+echo 'set -l cargobin $HOME/.cargo/bin
+if not contains $cargobin $PATH
+    set -gx PATH $PATH $cargobin
+end' > ~/.config/fish/conf.d/cargo-path.fish
+
+exec fish
+
+### install nvim
+yay -S neovim-nightly-bin
+
+### install lualocks
+sudo pacman -S python-pipx
+pipx ensurepath
+pipx install hererocks
+exec fish
+hererocks ~/.local/share/nvim/lazy-rocks --lua 5.1 --luarocks latest
+
+echo 'set -gx PATH $HOME/.local/share/nvim/lazy-rocks/bin $PATH' >> ~/.config/fish/config.fish
+
+### python3 provider error
+python -m venv ~/.venvs/nvim
+source ~/.venvs/nvim/bin/activate.fish
+pip install pynvim
+exit
+### init.luaにvim.g.loaded_python3_provider = 0を追加
+
+### Node.js provider error
+sudo pacman -S nodejs npm
+sudo npm install -g neovim
 
